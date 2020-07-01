@@ -28,9 +28,6 @@ app.use(
 
 app.options('*', cors());
 
-// Serve static assets
-app.use(express.static(`${__dirname}/client/public`));
-
 // Set security HTTP headers
 app.use(helmet());
 
@@ -69,7 +66,11 @@ app.use('/api/v1/users', userRouter);
 app.use('/api/v1/projects', projectRouter);
 app.use('/api/v1/sections', sectionRouter);
 
-// Serve index.html if in production
+// Serve static assets
+if (process.env.NODE_ENV === 'development') {
+  app.use(express.static(`${__dirname}/client/public`));
+}
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 
