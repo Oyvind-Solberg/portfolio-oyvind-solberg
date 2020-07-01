@@ -1,0 +1,35 @@
+@import '../../../shared/styles/main.scss';
+
+.Footer {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  font-size: 2.5rem;
+
+  width: 100%;
+  padding: 0rem 6rem;
+
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+
+  background-color: $color-grey-light-2;
+
+  // border-top: 0.5rem solid $color-primary-dark;
+  border-top: 0.5rem solid $color-grey-dark-3;
+
+  @include respond(tab-landscape) {
+    font-size: 2.2rem;
+    padding: 0rem 3rem;
+  }
+  @include respond(tab-portrait) {
+    font-size: 2.2rem;
+    padding: 0rem 2rem;
+  }
+  @include respond(phone) {
+    font-size: 2rem;
+    padding: 0rem 1rem;
+  }
+}

@@ -1,0 +1,98 @@
+@import '../../shared/styles/main.scss';
+
+.CRUDForm {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__Group {
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: $color-grey-light-3;
+    box-shadow: 0.5rem 2rem 3rem rgba($color: #000000, $alpha: 0.3);
+    border-radius: 3px;
+    height: 100%;
+
+    @include respond(tab-landscape) {
+      padding: 1.1rem;
+    }
+    @include respond(tab-portrait) {
+      padding: 0.7rem;
+    }
+    @include respond(phone) {
+      padding: 0.5rem;
+    }
+  }
+
+  & button {
+    margin-top: 3rem;
+
+    @include respond(tab-landscape) {
+      margin-top: 2.2rem;
+    }
+    @include respond(tab-portrait) {
+      margin-top: 1.4rem;
+    }
+    @include respond(phone) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__DocumentContainer {
+    margin-bottom: 1.5rem;
+
+    @include respond(tab-landscape) {
+      margin-bottom: 1.1rem;
+    }
+    @include respond(tab-portrait) {
+      margin-bottom: 0.7rem;
+    }
+    @include respond(phone) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__DocumentContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+
+    @include respond(tab-landscape) {
+      display: block;
+    }
+  }
+
+  &__Container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+
+    @include respond(tab-landscape) {
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+    }
+    @include respond(tab-portrait) {
+      gap: 0.7rem;
+    }
+    @include respond(phone) {
+      gap: 0.5rem;
+    }
+  }
+
+  & form {
+    background-color: $color-grey-light-2;
+    padding: 3rem;
+    border-radius: 3px;
+
+    @include respond(tab-landscape) {
+      padding: 2.8rem;
+    }
+    @include respond(tab-portrait) {
+      padding: 2rem;
+    }
+    @include respond(phone) {
+      padding: 1.5rem;
+    }
+  }
+}

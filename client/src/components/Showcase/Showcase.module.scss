@@ -1,0 +1,61 @@
+@import '../../shared/styles/main.scss';
+
+.Showcase {
+  position: relative;
+
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+
+  height: 44rem;
+
+  @include respond(tab-portrait) {
+    height: 100vh;
+
+    flex-direction: column;
+  }
+
+  &__TextArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 60%;
+    padding: 5rem 0;
+
+    @include respond(tab-landscape) {
+      padding: 3rem 0;
+    }
+
+    @include respond(tab-portrait) {
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      padding: 2rem 0;
+    }
+    @include respond(phone) {
+      height: 45%;
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__Image {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 40%;
+
+    @include respond(tab-portrait) {
+      justify-content: center;
+      width: 100%;
+      height: 65%;
+      position: absolute;
+      bottom: 0;
+    }
+    @include respond(phone) {
+      height: 65%;
+    }
+  }
+}

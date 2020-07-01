@@ -1,0 +1,112 @@
+@import '../../../shared/styles/main.scss';
+
+.HeadingPrimary {
+  font-weight: 400;
+  padding: 0.5rem 0;
+  color: $color-grey-dark-3;
+
+  @include respond(tab-landscape) {
+    padding: 0.3rem 0;
+  }
+  @include respond(tab-portrait) {
+    padding: 0.15rem 0;
+  }
+  @include respond(phone) {
+    padding: 0rem 0;
+  }
+
+  &--main {
+    font-size: 6.7rem;
+    @include respond(tab-landscape) {
+      font-size: 5.8rem;
+    }
+    @include respond(tab-portrait) {
+      font-size: 5rem;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &--sub {
+    font-size: 2.5rem;
+    @include respond(tab-landscape) {
+      font-size: 2.3rem;
+    }
+    @include respond(tab-portrait) {
+      font-size: 2rem;
+    }
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+}
+
+.HeadingSecondary {
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: $color-grey-dark-3;
+  border-bottom: 0.5rem solid $color-primary-dark;
+  width: fit-content;
+
+  @include respond(tab-landscape) {
+    font-size: 4rem;
+  }
+  @include respond(tab-portrait) {
+    font-size: 3.5rem;
+  }
+  @include respond(phone) {
+    font-size: 2.8rem;
+  }
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+
+  &--noBorder {
+    border-bottom: none;
+  }
+
+  &--center {
+    text-align: center;
+    width: auto;
+  }
+}
+
+.HeadingTertiary {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: $color-grey-dark-3;
+  border-bottom: 0.5rem solid $color-primary-dark;
+  font-weight: bold;
+
+  @include respond(tab-landscape) {
+    font-size: 2.3rem;
+    margin-bottom: 3rem;
+  }
+  @include respond(tab-portrait) {
+    font-size: 2.15rem;
+    margin-bottom: 2.5rem;
+  }
+  @include respond(phone) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  &--light {
+    color: $color-grey-light-2;
+  }
+
+  &--noBorder {
+    border-bottom: none;
+  }
+
+  &--center {
+    text-align: center;
+    width: auto;
+  }
+}

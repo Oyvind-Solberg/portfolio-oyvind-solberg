@@ -1,0 +1,35 @@
+@import '../../../shared/styles/main.scss';
+
+.Link {
+  display: block;
+  padding: 2rem 2rem;
+  width: 50%;
+
+  transition: all 0.3s ease;
+  transform: scale(1);
+  background: linear-gradient(
+    to left,
+    $white-transparent,
+    $white-transparent,
+    100%
+  );
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(
+      to left,
+      $white-transparent,
+      white 20%,
+      white 80%,
+      $white-transparent 100%
+    );
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &__Icon {
+    color: $color-primary-dark;
+  }
+}

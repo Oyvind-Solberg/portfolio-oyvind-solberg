@@ -1,0 +1,60 @@
+@import '../../shared/styles/main.scss';
+
+.Portfolio {
+  &__Section {
+    margin-top: 8rem;
+
+    @include respond(tab-landscape) {
+      margin-top: 6rem;
+    }
+    @include respond(tab-portrait) {
+      margin-top: 4.5rem;
+    }
+    @include respond(phone) {
+      margin-top: 3rem;
+    }
+
+    &:first-of-type {
+      margin-top: 3rem;
+
+      @include respond(tab-landscape) {
+        margin-top: 2rem;
+      }
+      @include respond(tab-portrait) {
+        margin-top: 1.5rem;
+      }
+      @include respond(phone) {
+        margin-top: 1.3rem;
+      }
+    }
+  }
+
+  &__Projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 40rem;
+    margin-bottom: 3rem;
+    gap: 3.5rem;
+
+    @include respond(big-desktop) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @include respond(tab-landscape) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @include respond(tab-portrait) {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 50vh;
+      margin-bottom: 4.5rem;
+    }
+  }
+}
