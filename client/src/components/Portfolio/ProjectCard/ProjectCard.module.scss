@@ -37,7 +37,6 @@
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     z-index: 3;
-    // border-top: 5px solid $color-primary-dark;
     position: absolute;
     bottom: -70%;
     left: 0;
@@ -48,12 +47,6 @@
     transition: all 0.5s ease;
 
     background-color: $color-grey-light-1;
-
-    // @include respond(touch-device) {
-    //   bottom: 0;
-    //   background-color: rgba($color: #f7f7f7, $alpha: 0.3);
-    //   background-color: red;
-    // }
   }
 
   &__Title {

@@ -1,5 +1,8 @@
 @import '../../../shared/styles/main.scss';
 
 .Image {
+  // height: 100%;
+  object-fit: cover;
   height: 100%;
+  max-width: 1500px;
 }
