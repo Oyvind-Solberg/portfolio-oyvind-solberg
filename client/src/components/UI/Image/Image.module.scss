@@ -5,4 +5,12 @@
   object-fit: cover;
   height: 100%;
   max-width: 1500px;
+  border: 1px solid blue;
+
+  &--showcase {
+    @include respond(big-desktop) {
+      object-fit: contain;
+      border: 1px solid green;
+    }
+  }
 }

@@ -33,6 +33,7 @@ const Showcase = (props) => {
         </div>
         <div className={classes.Showcase__Image}>
           <Image
+            showcase
             src="/img/users/user-5ed0e277d98bd71b080ec102.png"
             alt="Øyvind"
           />
