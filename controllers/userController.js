@@ -55,14 +55,12 @@ exports.processFiles = catchAsync(async (req, res, next) => {
   if (image) {
     image = image[0];
 
-    req.body.image = `user-${req.params.id}.png`;
+    req.body.image = `user-${req.params.id}.jpeg`;
 
     await sharp(image.buffer)
       .resize(1500, 1500)
-      .toFormat('png')
-      .png({
-        quality: 90,
-      })
+      .toFormat('jpeg')
+      .jpeg({ quality: 90 })
       .toFile(`client/public/img/users/${req.body.image}`);
   }
   next();
