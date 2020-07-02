@@ -36,7 +36,7 @@ const Admin = (props) => {
     if (!sections) {
       dispatch('GET_SECTIONS');
     }
-  }, [user, projects, sections, dispatch]);
+  }, []);
 
   return <Layout heading="Admin">{content}</Layout>;
 };

@@ -1,3 +1,10 @@
+const AppError = require('../utilities/appError');
+
+const handleResourceNotFound = () => {
+  const message = 'Kan ikkje finne forespurt ressurs.';
+  return new AppError(message, 404);
+};
+
 const sendErrorDev = (err, req, res) => {
   return res.status(err.statusCode).json({
     status: err.status,
@@ -28,8 +35,10 @@ module.exports = (err, req, res, next) => {
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(err, req, res);
   } else if (process.env.NODE_ENV === 'production') {
-    const error = { ...err };
+    let error = { ...err };
     error.message = err.message;
+
+    if (error.statusCode === 404) error = handleResourceNotFound();
 
     sendErrorProd(error, req, res);
   }

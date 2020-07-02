@@ -15,7 +15,9 @@ const withErrorHandler = (WrappedComponent, axios) => {
       (err) => {
         dispatch('SET_MESSAGE', {
           type: 'error',
-          text: err.response ? err.response.data.message : err.message,
+          text: err.response.data.message
+            ? err.response.data.message
+            : err.message,
         });
         return Promise.reject(err);
       }

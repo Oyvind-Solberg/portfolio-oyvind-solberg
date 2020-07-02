@@ -4,9 +4,7 @@ import axios from '../axios-PortfolioAPI';
 const configureStore = () => {
   const asyncActions = {
     LOGIN: async (globalState, payload) => {
-      const newState = {
-        isLoggedIn: false,
-      };
+      const newState = {};
 
       await axios
         .post('/users/login', payload.body)
@@ -19,43 +17,39 @@ const configureStore = () => {
         })
         .catch((err) => err);
 
-      return newState;
+      if (newState.message) return newState;
     },
     LOGIN_GUEST: async () => {
-      const newState = {
-        message: {
-          type: 'success',
-          text: 'Du er no innlogga som gjest.',
-        },
-        isLoggedIn: false,
-      };
+      const newState = {};
 
       await axios
         .get('/users/loginGuest')
         .then(() => {
           newState.isLoggedIn = true;
+          newState.message = {
+            type: 'success',
+            text: 'Du er no innlogga som gjest.',
+          };
         })
         .catch((err) => err);
 
-      return newState;
+      if (newState.message) return newState;
     },
     LOGOUT: async () => {
-      const newState = {
-        message: {
-          type: 'success',
-          text: 'Du er no logga ut.',
-        },
-        isLoggedIn: true,
-      };
+      const newState = {};
 
       await axios
         .get('/users/logout')
         .then(() => {
           newState.isLoggedIn = false;
+          newState.message = {
+            type: 'success',
+            text: 'Du er no logga ut.',
+          };
         })
         .catch((err) => err);
 
-      return newState;
+      if (newState.message) return newState;
     },
     GET_USER: async () => {
       let user;

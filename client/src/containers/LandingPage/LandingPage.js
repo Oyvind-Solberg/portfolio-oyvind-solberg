@@ -17,7 +17,7 @@ const LandingPage = (props) => {
     if (!sections) {
       asyncDispatch('GET_SECTIONS');
     }
-  }, [user, sections, asyncDispatch]);
+  }, []);
 
   let content;
 

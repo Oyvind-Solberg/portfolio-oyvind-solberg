@@ -11,7 +11,7 @@ const MessageBox = (props) => {
     const timer = setTimeout(() => {
       clearTimeout(timer);
       dispatch('SET_MESSAGE', false);
-    }, 3000);
+    }, 5000);
     return () => {
       clearTimeout(timer);
     };
