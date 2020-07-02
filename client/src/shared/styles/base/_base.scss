@@ -33,3 +33,7 @@ select {
   font-weight: inherit;
   font-size: inherit;
 }
+
+*:focus {
+  outline: none;
+}

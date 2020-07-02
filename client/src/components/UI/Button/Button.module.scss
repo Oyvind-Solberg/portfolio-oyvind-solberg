@@ -37,13 +37,15 @@
   }
 
   &:hover {
-    background: linear-gradient(
-      to left,
-      $color-primary,
-      $color-primary-light 20%,
-      $color-primary-light 80%,
-      $color-primary 100%
-    );
+    @include respond(mouse) {
+      background: linear-gradient(
+        to left,
+        $color-primary,
+        $color-primary-light 20%,
+        $color-primary-light 80%,
+        $color-primary 100%
+      );
+    }
   }
 
   &:disabled {

@@ -16,13 +16,15 @@
 
   &:hover,
   &:focus {
-    background: linear-gradient(
-      to left,
-      $white-transparent,
-      white 20%,
-      white 80%,
-      $white-transparent 100%
-    );
+    @include respond(mouse) {
+      background: linear-gradient(
+        to left,
+        $white-transparent,
+        white 20%,
+        white 80%,
+        $white-transparent 100%
+      );
+    }
   }
 
   &:active {

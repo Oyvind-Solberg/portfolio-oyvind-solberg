@@ -20,7 +20,7 @@ const ProjectCard = (props) => {
   };
 
   return (
-    <div className={classes.Card} style={styleCard}>
+    <div className={classes.Card} style={styleCard} tabIndex="0">
       <div className={classes.Card__TextArea}>
         <div className={classes.Card__Title}>
           <h4>{props.project.name}</h4>

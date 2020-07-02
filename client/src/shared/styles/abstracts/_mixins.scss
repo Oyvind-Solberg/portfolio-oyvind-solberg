@@ -7,6 +7,8 @@
 1800px + :      Big desktop
 
 $breakpoint arguement choices:
+- mouse
+- touch-device
 - phone
 - tab-portrait
 - tab-landscape
@@ -14,6 +16,16 @@ $breakpoint arguement choices:
 */
 
 @mixin respond($breakpoint) {
+  @if $breakpoint == mouse {
+    @media only screen and (hover: hover) {
+      @content;
+    }
+  }
+  @if $breakpoint == touch-device {
+    @media only screen and (hover: none) {
+      @content;
+    }
+  }
   @if $breakpoint == phone {
     @media only screen and (max-width: 600px) {
       @content;

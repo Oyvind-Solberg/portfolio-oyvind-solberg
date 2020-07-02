@@ -48,6 +48,12 @@
     transition: all 0.5s ease;
 
     background-color: $color-grey-light-1;
+
+    // @include respond(touch-device) {
+    //   bottom: 0;
+    //   background-color: rgba($color: #f7f7f7, $alpha: 0.3);
+    //   background-color: red;
+    // }
   }
 
   &__Title {
@@ -106,7 +112,8 @@
     margin-top: 2rem;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.1);
 
     @include respond(tab-landscape) {
@@ -120,7 +127,8 @@
     }
   }
 
-  &:hover &__TextArea {
+  &:hover &__TextArea,
+  &:focus &__TextArea {
     bottom: 0;
     border-top-color: rgba($color: $color-grey-light-1, $alpha: 0);
   }
