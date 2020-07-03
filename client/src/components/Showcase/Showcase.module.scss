@@ -16,6 +16,9 @@
   }
 
   &__TextArea {
+    position: relative;
+    z-index: 2;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,7 +32,6 @@
 
     @include respond(tab-portrait) {
       position: absolute;
-      z-index: 2;
       top: 0;
 
       width: 100%;
