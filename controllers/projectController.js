@@ -33,7 +33,7 @@ exports.resizeProjectImage = catchAsync(async (req, res, next) => {
   req.body.image = `project-${req.params.id}.jpeg`;
 
   await sharp(req.file.buffer)
-    .resize(500, 500)
+    .resize(1000, 1000)
     .toFormat('jpeg')
     .jpeg({ quality: 90 })
     .toFile(`client/build/img/projects/${req.body.image}`);
