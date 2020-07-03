@@ -1,26 +1,31 @@
 @import '../../../shared/styles/main.scss';
 
 .MessageBox {
-  width: 60vw;
   position: fixed;
+  z-index: 110;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 0%);
-  z-index: 110;
+
+  width: 60vw;
   padding: 3rem 4rem;
-  text-align: center;
+
   transition: all 0.3s ease;
-  border-bottom-left-radius: 3px;
+  transform: translate(-50%, 0%);
+  text-align: center;
+
   border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 
   @include respond(tab-landscape) {
     width: 70vw;
     padding: 2.2rem 3.2rem;
   }
+
   @include respond(tab-portrait) {
     width: 80vw;
     padding: 1.8rem 2.6rem;
   }
+
   @include respond(phone) {
     width: 100vw;
     padding: 1.5rem 2rem;

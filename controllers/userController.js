@@ -42,7 +42,7 @@ exports.processFiles = catchAsync(async (req, res, next) => {
     req.body.cv = 'cv-oyvind-solberg.pdf';
 
     fs.writeFileSync(
-      `client/public/pdf/${req.body.cv}`,
+      `client/build/pdf/${req.body.cv}`,
       req.files.cv[0].buffer,
       (err) => {
         next(err);
@@ -61,7 +61,7 @@ exports.processFiles = catchAsync(async (req, res, next) => {
       .resize(1500, 1500)
       .toFormat('jpeg')
       .jpeg({ quality: 90 })
-      .toFile(`client/public/img/users/${req.body.image}`);
+      .toFile(`client/build/img/users/${req.body.image}`);
   }
   next();
 });

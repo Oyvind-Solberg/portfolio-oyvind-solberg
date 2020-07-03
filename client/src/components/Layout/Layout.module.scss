@@ -8,6 +8,7 @@
 
     &--alt {
       display: none;
+
       @include respond(tab-portrait) {
         display: inline-block;
       }
@@ -21,9 +22,11 @@
   @include respond(tab-landscape) {
     padding: 4.5rem 5rem 6rem 5rem;
   }
+
   @include respond(tab-portrait) {
     padding: 4rem 3rem 4rem 3rem;
   }
+
   @include respond(phone) {
     padding: 3.3rem 2rem 3rem 2rem;
   }
