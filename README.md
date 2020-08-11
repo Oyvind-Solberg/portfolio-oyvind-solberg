@@ -15,4 +15,4 @@ The website is a `single-page application` written in `React` on the frontend an
 
 ## Roadmap
 
-- August 2020 - Implement file uploads using `Amazon S3`
+- August 2020 - Implement file uploads using `Firebase storage`
