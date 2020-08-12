@@ -5,6 +5,8 @@ const factory = require('./handlerFactory');
 const AppError = require('../utilities/appError');
 const catchAsync = require('../utilities/catchAsync');
 
+// Implement Firebase Storage here
+
 // Upload image
 const multerStorage = multer.memoryStorage();
 
