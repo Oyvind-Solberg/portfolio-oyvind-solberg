@@ -23,20 +23,12 @@ const Showcase = (props) => {
             </Heading>
           </div>
 
-          <Button
-            link="/pdf/cv-oyvind-solberg.pdf"
-            icon="file-alt"
-            fitContent="true"
-          >
+          <Button link={props.user.cv} icon="file-alt" fitContent="true">
             Last ned CV
           </Button>
         </div>
         <div className={classes.Showcase__Image}>
-          <Image
-            showcase
-            src="/img/users/user-5ed0e277d98bd71b080ec102.jpeg"
-            alt="Øyvind"
-          />
+          <Image showcase src={props.user.image} alt="Øyvind" />
         </div>
       </div>
     </>

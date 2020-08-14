@@ -1,11 +1,9 @@
 const multer = require('multer');
-const sharp = require('sharp');
+const { bucket } = require('./firebase');
 const Project = require('../models/projectModel');
 const factory = require('./handlerFactory');
 const AppError = require('../utilities/appError');
 const catchAsync = require('../utilities/catchAsync');
-
-// Implement Firebase Storage here
 
 // Upload image
 const multerStorage = multer.memoryStorage();
@@ -28,19 +26,25 @@ const upload = multer({
 
 exports.uploadProjectImage = upload.single('image');
 
-// Resize image
-exports.resizeProjectImage = catchAsync(async (req, res, next) => {
+// Process file
+exports.processFile = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
 
-  req.body.image = `project-${req.params.id}.jpeg`;
+  const blob = bucket.file(req.file.originalname);
+  const blobStream = blob.createWriteStream({
+    metadata: {
+      contentType: req.file.mimetype,
+    },
+  });
 
-  await sharp(req.file.buffer)
-    .resize(1000, 1000)
-    .toFormat('jpeg')
-    .jpeg({ quality: 90 })
-    .toFile(`client/build/img/projects/${req.body.image}`);
-
-  next();
+  // blobStream.on('error', (err) => next(err));
+  blobStream.on('finish', () => {
+    req.body.image = `https://firebasestorage.googleapis.com/v0/b/${
+      bucket.name
+    }/o/${encodeURI(blob.name)}?alt=media`;
+    next();
+  });
+  blobStream.end(req.file.buffer);
 });
 
 exports.getProject = factory.getOne(Project);

@@ -1,6 +1,5 @@
 const multer = require('multer');
-const sharp = require('sharp');
-const fs = require('fs');
+const { bucket } = require('./firebase');
 const User = require('../models/userModel');
 const factory = require('./handlerFactory');
 const AppError = require('../utilities/appError');
@@ -37,33 +36,48 @@ exports.uploadUserFiles = upload.fields([{ name: 'cv' }, { name: 'image' }]);
 
 // Process files
 exports.processFiles = catchAsync(async (req, res, next) => {
-  // Store pdf to disk
   if (req.files.cv) {
-    req.body.cv = 'cv-oyvind-solberg.pdf';
+    const blob = bucket.file(req.files.cv[0].originalname);
+    const blobStream = blob.createWriteStream({
+      metadata: {
+        contentType: req.files.cv[0].mimetype,
+      },
+    });
 
-    fs.writeFileSync(
-      `client/build/pdf/${req.body.cv}`,
-      req.files.cv[0].buffer,
-      (err) => {
-        next(err);
-      }
-    );
+    blobStream.on('error', (err) => next(err));
+    blobStream.on('finish', () => {
+      req.body.cv = `https://firebasestorage.googleapis.com/v0/b/${
+        bucket.name
+      }/o/${encodeURI(blob.name)}?alt=media`;
+      next();
+    });
+    blobStream.end(req.files.cv[0].buffer);
   }
 
-  // Resize image
   let { image } = req.files;
   if (image) {
     image = image[0];
 
-    req.body.image = `user-${req.params.id}.jpeg`;
+    const blob = bucket.file(image.originalname);
+    const blobStream = blob.createWriteStream({
+      metadata: {
+        contentType: image.mimetype,
+      },
+    });
 
-    await sharp(image.buffer)
-      .resize(1500, 1500)
-      .toFormat('jpeg')
-      .jpeg({ quality: 90 })
-      .toFile(`client/build/img/users/${req.body.image}`);
+    blobStream.on('error', (err) => next(err));
+    blobStream.on('finish', () => {
+      req.body.image = `https://firebasestorage.googleapis.com/v0/b/${
+        bucket.name
+      }/o/${encodeURI(blob.name)}?alt=media`;
+      next();
+    });
+    blobStream.end(image.buffer);
   }
-  next();
+
+  if (!req.files.cv && !image) {
+    next();
+  }
 });
 
 exports.getUser = factory.getOne(User);

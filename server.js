@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 process.on('uncaughtException', (err) => {
   console.log('UNCAUGHT EXEPTION! Shutting down...');
@@ -8,6 +9,11 @@ process.on('uncaughtException', (err) => {
 });
 
 dotenv.config({ path: './config.env' });
+console.log(process.env.GOOGLE_CREDENTIALS);
+fs.writeFileSync(
+  './services/firebaseKeyFile.json',
+  process.env.GOOGLE_CREDENTIALS
+);
 const app = require('./app');
 
 const DB = process.env.DATABASE.replace(

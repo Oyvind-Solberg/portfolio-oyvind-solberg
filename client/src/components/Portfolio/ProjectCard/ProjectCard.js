@@ -14,7 +14,7 @@ const ProjectCard = (props) => {
   );
 
   const styleCard = {
-    backgroundImage: `url('/img/projects/${props.project.image}')`,
+    backgroundImage: `url('${props.project.image}')`,
     backgroundPosition: 'center center',
     backgroundSize: 'cover',
   };

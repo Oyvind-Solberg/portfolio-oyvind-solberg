@@ -20,7 +20,7 @@ router
     authController.protect,
     authController.restrictTo('admin'),
     projectController.uploadProjectImage,
-    projectController.resizeProjectImage,
+    projectController.processFile,
     projectController.updateProject
   )
   .delete(
