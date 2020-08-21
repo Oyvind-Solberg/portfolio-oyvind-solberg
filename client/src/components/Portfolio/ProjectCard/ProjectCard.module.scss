@@ -5,8 +5,8 @@
 
   overflow: hidden;
 
-  width: 100%;
-  height: 100%;
+  width: 36rem;
+  height: 36rem;
 
   transition: all 0.5s ease;
   transform: scale(1);
@@ -15,6 +15,13 @@
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   box-shadow: 0.5rem 2rem 3rem rgba($color: #000000, $alpha: 0.5);
+
+  margin-bottom: 3rem;
+
+  @include respond(phone) {
+    width: 100%;
+    height: calc(100vw - 4rem);
+  }
 
   &::before {
     position: absolute;
@@ -108,12 +115,20 @@
     }
 
     @include respond(phone) {
-      padding: 2rem 2.5rem 2rem 2.5rem;
+      padding: 2rem 1.5rem 2rem 1.5rem;
     }
   }
 
   &__Buttons {
-    margin-top: 2rem;
+    display: flex;
+    // margin-top: 2rem;
+    & > :first-of-type {
+      margin-right: 1rem;
+
+      @include respond(phone) {
+        margin-right: 0.5rem;
+      }
+    }
   }
 
   &:hover,

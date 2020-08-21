@@ -9,7 +9,6 @@ process.on('uncaughtException', (err) => {
 });
 
 dotenv.config({ path: './config.env' });
-console.log(process.env.GOOGLE_CREDENTIALS);
 fs.writeFileSync(
   './services/firebaseKeyFile.json',
   process.env.GOOGLE_CREDENTIALS

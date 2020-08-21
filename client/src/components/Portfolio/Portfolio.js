@@ -10,6 +10,11 @@ const Portfolio = (props) => {
       (project) => project.published
     );
 
+    // Only for testing purpose
+    // for (let i = 0; i < 4; i++) {
+    //   filteredProjects.push(filteredProjects[0]);
+    // }
+
     const projects = filteredProjects.map((project) => {
       return <ProjectCard project={project} key={project._id} />;
     });
