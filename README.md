@@ -11,8 +11,4 @@ To view the admin page use this link: https://portfolio-oyvind-solberg.herokuapp
 
 ## About the project
 
-The website is a `single-page application` written in `React` on the frontend and `Node.js/Express` on the backend. The database was created using `MongoDB/Mongoose`. The website has `login` functionality to access the admin page, using `JSON Web Token` for authentication.
-
-## Roadmap
-
-- August 2020 - Implement file uploads using `Firebase storage`
+The website is a `single-page application` written in `React` on the frontend and `Node.js/Express` on the backend. The database was created using `MongoDB/Mongoose`. The website has `login` functionality to access the admin page, using `JSON Web Token` for authentication. File uploads is implemented using `Firebase storage`.
