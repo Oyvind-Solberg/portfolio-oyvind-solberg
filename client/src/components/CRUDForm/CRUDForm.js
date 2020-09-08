@@ -116,7 +116,7 @@ const CRUDForm = (props) => {
 
   return (
     <div className={classes.CRUDForm}>
-      <Heading type="Secondary" theme="light">
+      <Heading type="Secondary" theme="light" center>
         {props.heading}
       </Heading>
       <div className={classes.CRUDForm__Group}>

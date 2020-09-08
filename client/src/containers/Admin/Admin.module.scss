@@ -4,9 +4,6 @@
   display: grid;
   grid-template-columns: 1fr;
 
-  @include respond(big-desktop) {
-    grid-template-columns: 1fr 1fr;
-
-    gap: 3rem;
-  }
+  max-width: 1200px;
+  margin: auto;
 }
