@@ -132,7 +132,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-within {
     transform: scale(1.1);
 
     @include respond(tab-landscape) {
@@ -149,7 +149,7 @@
   }
 
   &:hover &__TextArea,
-  &:focus &__TextArea {
+  &:focus-within &__TextArea {
     bottom: 0;
 
     border-top-color: rgba($color: $color-grey-light-1, $alpha: 0);

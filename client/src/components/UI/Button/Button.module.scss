@@ -30,6 +30,13 @@
   &:active,
   &:focus {
     outline: none;
+    background: linear-gradient(
+      to left,
+      $color-primary,
+      $color-primary-light 20%,
+      $color-primary-light 80%,
+      $color-primary 100%
+    );
   }
 
   &:active {
