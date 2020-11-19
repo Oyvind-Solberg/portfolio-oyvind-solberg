@@ -13,11 +13,10 @@
   transition: all 0.2s ease;
   text-align: left;
 
-  color: white;
+  color: $color-grey-dark-3;
   border: none;
-  border-radius: 3px;
-  background: linear-gradient(to left, $color-primary, $color-primary 100%);
-  box-shadow: 0.5rem 2rem 1.5rem rgba($color: #000000, $alpha: 0.2);
+  outline: 2px solid $color-primary-dark;
+  background: transparent;
 
   &--fitContent {
     width: fit-content;
@@ -27,47 +26,60 @@
     text-align: center;
   }
 
-  &:active,
-  &:focus {
-    outline: none;
-    background: linear-gradient(
-      to left,
-      $color-primary,
-      $color-primary-light 20%,
-      $color-primary-light 80%,
-      $color-primary 100%
-    );
+  &--uppercase {
+    text-transform: uppercase;
   }
 
-  &:active {
-    transform: scale(0.95);
+  &--light {
+    outline: 2px solid white;
+    color: white;
 
-    box-shadow: 0.25rem 1rem 1rem rgba($color: #000000, $alpha: 0.2);
+    &:active,
+    &:focus {
+      outline: 2px solid $color-primary-light;
+    }
+  }
+
+  &:active,
+  &:focus {
+    background: $color-primary-dark;
+    color: white;
   }
 
   &:hover {
     @include respond(mouse) {
-      background: linear-gradient(
-        to left,
-        $color-primary,
-        $color-primary-light 20%,
-        $color-primary-light 80%,
-        $color-primary 100%
-      );
+      background: $color-primary-dark;
+      color: white;
     }
   }
 
   &:disabled {
-    color: $color-grey-dark-1;
-    background: linear-gradient(
-      to left,
-      $color-grey-light-2,
-      $color-grey-light-2 100%
-    );
-    box-shadow: 0.112rem 0.5rem 0.5rem rgba($color: #000000, $alpha: 0.1);
+    color: $color-grey-light-2;
+    outline: 2px solid $color-grey-light-2;
+    cursor: not-allowed;
+    &:hover {
+      @include respond(mouse) {
+        background: transparent;
+      }
+    }
   }
 
   &__Link {
-    color: white;
+    color: $color-grey-dark-3;
+
+    &--light {
+      color: white;
+
+      &:hover {
+        @include respond(mouse) {
+          background: $color-primary-light;
+          outline: 2px solid $color-primary-light;
+        }
+      }
+      &:active,
+      &:focus {
+        background: $color-primary-light;
+      }
+    }
   }
 }

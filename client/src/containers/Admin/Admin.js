@@ -7,6 +7,7 @@ import ProjectData from './ProjectData/ProjectData';
 import SectionData from './SectionData/SectionData';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import classes from './Admin.module.scss';
+import Container from '../../components/Layout/Container/Container';
 
 const Admin = (props) => {
   const { user, projects, sections } = useStore()[0];
@@ -38,7 +39,11 @@ const Admin = (props) => {
     }
   }, []);
 
-  return <Layout heading="Admin">{content}</Layout>;
+  return (
+    <Layout heading="Admin">
+      <Container color="light">{content}</Container>
+    </Layout>
+  );
 };
 
 export default Admin;

@@ -23,6 +23,14 @@ const Heading = (props) => {
     if (props.center) {
       headingClasses.push(classes[`Heading${props.type}--center`]);
     }
+
+    if (props.uppercase) {
+      headingClasses.push(classes[`Heading${props.type}--uppercase`]);
+    }
+
+    if (props.filled) {
+      headingClasses.push(classes[`Heading${props.type}--filled`]);
+    }
   }
 
   if (!props.nonSemantic) {

@@ -10,22 +10,22 @@
     height: 100%;
     margin-top: 2rem;
     margin-bottom: 4rem;
-    padding: 1.5rem;
 
     border-radius: 3px;
-    background-color: $color-grey-light-3;
-    box-shadow: 0.5rem 2rem 3rem rgba($color: #000000, $alpha: 0.3);
+    // background-color: $color-grey-light-3;
 
     @include respond(tab-landscape) {
-      padding: 1.1rem;
+      margin-bottom: 3.5rem;
     }
 
     @include respond(tab-portrait) {
       padding: 0.7rem;
+      margin-bottom: 2.5rem;
     }
 
     @include respond(phone) {
       padding: 0.5rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -97,7 +97,7 @@
     padding: 3rem;
 
     border-radius: 3px;
-    background-color: $color-grey-light-2;
+    // background-color: $color-grey-light-1;
 
     @include respond(tab-landscape) {
       padding: 2.8rem;

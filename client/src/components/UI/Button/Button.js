@@ -15,6 +15,15 @@ const Button = (props) => {
     buttonClasses.push(classes['Button--center']);
   }
 
+  if (props.uppercase) {
+    buttonClasses.push(classes['Button--uppercase']);
+  }
+
+  if (props.light) {
+    buttonClasses.push(classes['Button--light']);
+    buttonClasses.push(classes['Button__Link--light']);
+  }
+
   const icon = props.icon ? <Icon icon={props.icon} /> : null;
   const content = (
     <Paragraph>
@@ -31,6 +40,17 @@ const Button = (props) => {
           href={props.link}
           target="_blank"
           rel="noopener noreferrer"
+        >
+          {content}
+        </a>
+      </>
+    );
+  } else if (props.internLink) {
+    return (
+      <>
+        <a
+          className={[...buttonClasses, classes.Button__Link].join(' ')}
+          href={props.internLink}
         >
           {content}
         </a>

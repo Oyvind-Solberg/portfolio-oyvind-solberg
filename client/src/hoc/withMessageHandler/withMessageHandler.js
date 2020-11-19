@@ -12,7 +12,7 @@ const withMessageHandler = (WrappedComponent) => {
         {message ? (
           <MessageBox type={message.type} text={message.text} />
         ) : null}
-        <WrappedComponent {...props} />;
+        <WrappedComponent {...props} />
       </>
     );
   };

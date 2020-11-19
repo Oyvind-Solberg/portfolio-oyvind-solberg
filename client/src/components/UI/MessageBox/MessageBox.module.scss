@@ -13,8 +13,8 @@
   transform: translate(-50%, 0%);
   text-align: center;
 
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 
   @include respond(tab-landscape) {
     width: 70vw;
@@ -32,11 +32,11 @@
   }
 
   &--success {
-    background-color: $color-success-light;
+    background-color: $color-success-light-2;
   }
 
   &--danger {
-    background-color: $color-danger-light;
+    background-color: $color-danger-light-2;
   }
 
   &--hidden {

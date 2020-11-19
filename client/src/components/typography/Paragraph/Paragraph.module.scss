@@ -1,14 +1,10 @@
 @import '../../../shared/styles/main.scss';
 
 .Paragraph {
-  font-size: 1.8rem;
-
-  @include respond(tab-landscape) {
-    font-size: 1.8rem;
-  }
+  font-size: 1.6rem;
 
   @include respond(tab-portrait) {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
   }
 
   @include respond(phone) {

@@ -30,16 +30,39 @@
     border-radius: 3px;
     outline: none;
     background-color: $color-grey-light-1;
+
+    &--underline {
+      border-bottom: 2px solid $color-grey-dark-2;
+      border-radius: 0px;
+      outline: none;
+
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid $color-primary-light;
+      }
+    }
+  }
+
+  &--dark[type] {
+    background-color: $color-background-grey;
+    color: white;
   }
 
   &__Label {
     display: block;
+    font-weight: 600;
+    color: $color-primary-dark;
 
     margin-bottom: 1rem;
   }
 
   &__Invalid {
     outline: 2px solid $color-danger-light;
+
+    &.Input__Element--underline {
+      outline: none;
+      border-bottom: 2px solid $color-danger-light;
+    }
   }
 }
 

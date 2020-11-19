@@ -3,37 +3,24 @@
 .Link {
   display: block;
 
-  width: 50%;
-  padding: 2rem 2rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 2rem;
 
   transition: all 0.3s ease;
-  transform: scale(1);
 
-  background: linear-gradient(
-    to left,
-    $white-transparent,
-    $white-transparent,
-    100%
-  );
+  background: $color-background-2;
+  color: white;
 
   &:hover,
   &:focus {
     @include respond(mouse) {
-      background: linear-gradient(
-        to left,
-        $white-transparent,
-        white 20%,
-        white 80%,
-        $white-transparent 100%
-      );
+      background: $color-grey-light-1;
+      color: $color-grey-dark-3;
     }
   }
 
-  &:active {
-    transform: scale(0.95);
-  }
-
   &__Icon {
-    color: $color-primary-dark;
+    // color: $color-primary-light;
   }
 }

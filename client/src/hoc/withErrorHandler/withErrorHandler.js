@@ -32,7 +32,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
 
     return (
       <>
-        <WrappedComponent {...props} />;
+        <WrappedComponent {...props} />
       </>
     );
   };

@@ -1,7 +1,15 @@
 // COLORS
 $color-primary: hsl(221, 49%, 55%);
 $color-primary-light: hsl(221, 55%, 64%);
+$color-primary-light-2: hsl(221, 75%, 78%);
 $color-primary-dark: hsl(221, 64%, 43%);
+
+$color-background-1: hsl(213, 27%, 15%);
+$color-background-2: hsl(223, 17%, 20%);
+$color-background-grey: hsl(214, 19%, 15%);
+
+// $color-background-1: hsl(220, 47%, 15%);
+// $color-background-2: hsl(221, 24%, 28%);
 
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #dbdbdb;
@@ -16,5 +24,7 @@ $black-transparent: rgba(0, 0, 0, 0);
 
 $color-danger: red;
 $color-danger-light: rgb(255, 132, 132);
+$color-danger-light-2: rgb(248, 186, 186);
 $color-success: green;
 $color-success-light: rgb(146, 255, 146);
+$color-success-light-2: rgb(186, 243, 186);

@@ -23,6 +23,7 @@ const CRUDForm = (props) => {
       return (
         <div key={formElement.id}>
           <Input
+            underline
             inputType={formElement.config.elementConfig.type}
             label={formElement.config.label}
             name={formElement.id}
@@ -116,7 +117,7 @@ const CRUDForm = (props) => {
 
   return (
     <div className={classes.CRUDForm}>
-      <Heading type="Secondary" theme="light" center>
+      <Heading type="Secondary" center noBorder filled>
         {props.heading}
       </Heading>
       <div className={classes.CRUDForm__Group}>

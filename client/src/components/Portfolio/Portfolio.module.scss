@@ -1,6 +1,21 @@
 @import '../../shared/styles/main.scss';
 
 .Portfolio {
+  min-height: 100vh;
+  padding-top: 8rem;
+
+  @include respond(tab-landscape) {
+    padding-top: 6rem;
+  }
+
+  @include respond(tab-portrait) {
+    padding-top: 5rem;
+  }
+
+  @include respond(phone) {
+    padding-top: 3rem;
+  }
+
   &__Section {
     margin-top: 8rem;
 
@@ -41,18 +56,12 @@
 
     margin-bottom: 3rem;
 
-    gap: 3.5rem;
-
     @include respond(tab-landscape) {
       margin-bottom: 3rem;
-
-      gap: 3rem;
     }
 
     @include respond(tab-portrait) {
       margin-bottom: 3rem;
-
-      gap: 2rem;
     }
 
     @include respond(phone) {
@@ -60,8 +69,6 @@
       grid-auto-rows: auto;
 
       margin-bottom: 4.5rem;
-
-      gap: 0;
     }
   }
 }

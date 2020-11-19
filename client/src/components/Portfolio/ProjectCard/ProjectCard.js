@@ -7,7 +7,7 @@ import Paragraph from '../../typography/Paragraph/Paragraph';
 const ProjectCard = (props) => {
   const website = (
     <>
-      <Button link={props.project.website} icon="globe">
+      <Button uppercase center link={props.project.website}>
         Nettside
       </Button>
     </>
@@ -21,18 +21,17 @@ const ProjectCard = (props) => {
 
   return (
     <div className={classes.Card} style={styleCard} tabIndex="0">
-      <div className={classes.Card__TextArea}>
-        <div className={classes.Card__Title}>
+      <div className={classes.Card__Content}>
+        <div className={classes.Card__Text}>
           <h4>{props.project.name}</h4>
+          <p className={classes.Card__SubText}>{props.project.description}</p>
         </div>
-        <div className={classes.Card__Content}>
-          <Paragraph>{props.project.description}</Paragraph>
-          <div className={classes.Card__Buttons}>
-            {props.project.code ? website : null}
-            <Button link={props.project.code} icon="code">
-              Kode
-            </Button>
-          </div>
+
+        <div className={classes.Card__Buttons}>
+          {props.project.code ? website : null}
+          <Button uppercase center link={props.project.code}>
+            GitHub
+          </Button>
         </div>
       </div>
     </div>

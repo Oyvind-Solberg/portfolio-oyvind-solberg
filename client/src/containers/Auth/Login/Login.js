@@ -81,6 +81,7 @@ const Login = (props) => {
 
   let formInputs = formElementsArray.map((formElement) => (
     <Input
+      theme="dark"
       inputType={formElement.config.elementConfig.type}
       name={formElement.id}
       key={formElement.id}
@@ -99,16 +100,16 @@ const Login = (props) => {
       <div className={classes.Login__FormContainer}>
         <form onSubmit={submitHandler}>
           <legend>
-            <Heading type="Tertiary" nonSemantic noBorder>
+            <Heading type="Tertiary" nonSemantic noBorder theme="light">
               Logg inn
             </Heading>
           </legend>
           {formInputs}
           <div className={classes.Login__Buttons}>
-            <Button center submit>
+            <Button center submit light>
               Logg inn
             </Button>
-            <Button center onClick={submitGuestHandler}>
+            <Button center onClick={submitGuestHandler} light>
               Logg inn som gjest
             </Button>
           </div>

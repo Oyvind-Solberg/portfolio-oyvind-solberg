@@ -17,21 +17,7 @@
 }
 
 .Main {
-  padding: 6rem 8rem 10rem 8rem;
-
-  @include respond(tab-landscape) {
-    padding: 4.5rem 5rem 6rem 5rem;
-  }
-
-  @include respond(tab-portrait) {
-    padding: 4rem 3rem 4rem 3rem;
-  }
-
-  @include respond(phone) {
-    padding: 3.3rem 2rem 3rem 2rem;
-  }
 }
 
 body {
-  background-color: $color-grey-dark-3;
 }

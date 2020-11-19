@@ -11,7 +11,9 @@ const Header = (props) => {
         <Showcase user={props.user} />
       ) : (
         <div className={classes.Header__Heading}>
-          <Heading type="Primary">{props.heading}</Heading>
+          <Heading type="Primary" theme="light">
+            {props.heading}
+          </Heading>
         </div>
       )}
     </header>

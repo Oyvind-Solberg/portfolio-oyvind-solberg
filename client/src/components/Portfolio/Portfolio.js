@@ -3,6 +3,7 @@ import React from 'react';
 import classes from './Portfolio.module.scss';
 import ProjectCard from './ProjectCard/ProjectCard';
 import Heading from '../typography/Heading/Heading';
+import Container from '../Layout/Container/Container';
 
 const Portfolio = (props) => {
   const content = props.sections.map((section) => {
@@ -23,7 +24,7 @@ const Portfolio = (props) => {
 
     return (
       <li key={section._id} className={classes.Portfolio__Section}>
-        <Heading type="Tertiary" theme="light">
+        <Heading type="Tertiary" theme="dark" noBorder center filled>
           {section.name}
         </Heading>
         <div className={classes.Portfolio__Projects}>{projects}</div>
@@ -32,12 +33,14 @@ const Portfolio = (props) => {
   });
 
   return (
-    <div className={classes.Portfolio}>
-      <Heading type="Secondary" theme="light" noBorder center>
-        Prosjekter
-      </Heading>
-      <ul>{content}</ul>
-    </div>
+    <Container color="light">
+      <div id="portfolio" className={classes.Portfolio}>
+        <Heading type="Secondary" theme="dark" noBorder center uppercase>
+          Prosjekter
+        </Heading>
+        <ul>{content}</ul>
+      </div>
+    </Container>
   );
 };
 

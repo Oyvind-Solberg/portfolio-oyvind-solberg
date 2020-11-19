@@ -4,6 +4,20 @@
   display: grid;
   grid-template-columns: 1fr;
 
+  padding-top: 5rem;
+
+  @include respond(tab-landscape) {
+    padding-top: 4rem;
+  }
+
+  @include respond(tab-portrait) {
+    padding-top: 3rem;
+  }
+
+  @include respond(phone) {
+    padding-top: 2rem;
+  }
+
   max-width: 1200px;
   margin: auto;
 }

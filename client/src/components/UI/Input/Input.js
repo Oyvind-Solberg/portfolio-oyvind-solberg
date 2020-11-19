@@ -9,6 +9,15 @@ const Input = (props) => {
   if (props.invalid && props.shouldValidate && props.touched) {
     inputClasses.push(classes.Input__Invalid);
   }
+
+  if (props.theme === 'dark') {
+    inputClasses.push(classes['Input--dark']);
+  }
+
+  if (props.underline) {
+    inputClasses.push(classes['Input__Element--underline']);
+  }
+
   switch (props.elementType) {
     case 'input':
       if (props.inputType === 'checkbox') {
@@ -79,7 +88,7 @@ const Input = (props) => {
     <>
       {props.label ? (
         <label
-          className={[classes.Input, classes.Input_Label].join(' ')}
+          className={[classes.Input, classes.Input__Label].join(' ')}
           htmlFor={props.name}
         >
           {props.label}
