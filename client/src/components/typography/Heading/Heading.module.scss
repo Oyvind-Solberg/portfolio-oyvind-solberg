@@ -153,3 +153,56 @@
     color: white;
   }
 }
+
+.HeadingQuaternary {
+  font-size: 2.5rem;
+  font-weight: bold;
+
+  margin-bottom: 1rem;
+
+  color: $color-grey-dark-3;
+  border-bottom: 0.5rem solid $color-primary-dark;
+
+  width: fit-content;
+
+  @include respond(tab-landscape) {
+    font-size: 2.3rem;
+
+    margin-bottom: 0.8rem;
+  }
+
+  @include respond(tab-portrait) {
+    font-size: 2.15rem;
+
+    margin-bottom: 0.7rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+
+    margin-bottom: 0.6rem;
+  }
+
+  &--light {
+    color: $color-grey-light-2;
+  }
+
+  &--noBorder {
+    border-bottom: none;
+  }
+
+  &--center {
+    width: auto;
+
+    text-align: center;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--filled {
+    background-color: $color-primary;
+    color: white;
+  }
+}

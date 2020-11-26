@@ -26,12 +26,9 @@ const Showcase = (props) => {
             Eg er ein front end utviklar.
           </p>
         </div>
-        <Button internLink="#portfolio" fitContent="true" light>
-          Gå til prosjekter
+        <Button internLink="#about" fitContent="true" light>
+          Meir om meg
         </Button>
-        {/* <div className={classes.Showcase__Image}>
-          <Image showcase src={props.user.image} alt="Øyvind" />
-        </div> */}
       </div>
     </>
   ) : (

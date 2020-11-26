@@ -1,6 +1,6 @@
-# Portfolio Øyvind Solberg
+# Portfolio
 
-Portfolio Øyvind Solberg is my personal portfolio website, where i publish my development projects.
+This is my personal portfolio website, where i publish my development projects.
 It has a login page where I can manage new and existing projects.
 
 ## Demo

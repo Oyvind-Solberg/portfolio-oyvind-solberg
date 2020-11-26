@@ -26,10 +26,10 @@ const Button = (props) => {
 
   const icon = props.icon ? <Icon icon={props.icon} /> : null;
   const content = (
-    <Paragraph>
+    <p className={classes.Button__Text}>
       {icon}
       {props.children}
-    </Paragraph>
+    </p>
   );
 
   if (props.link) {

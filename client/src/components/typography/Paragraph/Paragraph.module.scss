@@ -2,6 +2,7 @@
 
 .Paragraph {
   font-size: 1.6rem;
+  color: $color-grey-dark-3;
 
   @include respond(tab-portrait) {
     font-size: 1.55rem;

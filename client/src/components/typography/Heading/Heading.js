@@ -15,7 +15,11 @@ const Heading = (props) => {
     headingClasses.push(classes['HeadingPrimary--main']);
   }
 
-  if (props.type === 'Secondary' || props.type === 'Tertiary') {
+  if (
+    props.type === 'Secondary' ||
+    props.type === 'Tertiary' ||
+    props.type === 'Quaternary'
+  ) {
     if (props.noBorder) {
       headingClasses.push(classes[`Heading${props.type}--noBorder`]);
     }
@@ -41,6 +45,8 @@ const Heading = (props) => {
         return <h2 className={headingClasses.join(' ')}>{props.children}</h2>;
       case 'Tertiary':
         return <h3 className={headingClasses.join(' ')}>{props.children}</h3>;
+      case 'Quaternary':
+        return <h4 className={headingClasses.join(' ')}>{props.children}</h4>;
       default:
         return <h1 className={headingClasses.join(' ')}>{props.children}</h1>;
     }
