@@ -9,6 +9,10 @@ const projectSchema = new mongoose.Schema(
       unique: true,
     },
     slug: String,
+    skills: {
+      type: String,
+      required: [true, 'A project must have a skill'],
+    },
     description: {
       type: String,
       required: [true, 'A project must have a description'],

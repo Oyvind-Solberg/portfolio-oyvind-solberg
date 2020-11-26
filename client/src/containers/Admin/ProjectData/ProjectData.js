@@ -39,6 +39,19 @@ const ProjectData = (props) => {
       valid: false,
       touched: false,
     },
+    skills: {
+      elementType: 'textarea',
+      elementConfig: {
+        placeholder: 'Ferdigheter',
+      },
+      value: '',
+      label: 'Ferdigheter',
+      validation: {
+        required: true,
+      },
+      valid: false,
+      touched: false,
+    },
     description: {
       elementType: 'textarea',
       elementConfig: {

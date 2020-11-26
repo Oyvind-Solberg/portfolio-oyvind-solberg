@@ -1,0 +1,65 @@
+@import '../../../shared/styles/main.scss';
+
+.Card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  background-color: white;
+
+  overflow: hidden;
+
+  // width: 100%;
+  height: 100%;
+
+  &:focus {
+    outline: 2px solid $color-primary;
+  }
+
+  &__VideoContainer {
+    width: 720px;
+    height: 405px;
+    margin: auto;
+
+    @include respond(tab-portrait) {
+      width: calc(100vw - 6rem);
+      height: calc((100vw - 6rem) * 0.562);
+    }
+
+    @include respond(phone) {
+      width: calc(100vw - 2rem);
+      height: calc((100vw - 2rem) * 0.562);
+    }
+  }
+
+  &__Video {
+    object-fit: scale-down;
+  }
+
+  &__Text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    text-align: center;
+    margin: 2rem 0;
+
+    & h4 {
+      font-size: 2.1rem;
+      line-height: 2.2rem;
+      color: $color-grey-dark-3;
+    }
+  }
+
+  &__SubText {
+    font-size: 1.6rem;
+    color: $color-primary-dark;
+  }
+
+  &__Button {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 3rem;
+  }
+}

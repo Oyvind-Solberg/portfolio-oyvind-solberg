@@ -24,7 +24,11 @@ const ProjectCard = (props) => {
       <div className={classes.Card__Content}>
         <div className={classes.Card__Text}>
           <h4>{props.project.name}</h4>
-          <p className={classes.Card__SubText}>{props.project.description}</p>
+          <p className={classes.Card__SubText}>{props.project.skills}</p>
+        </div>
+
+        <div className={classes.Card__Description}>
+          <Paragraph>{props.project.description}</Paragraph>
         </div>
 
         <div className={classes.Card__Buttons}>

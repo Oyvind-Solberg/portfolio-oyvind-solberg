@@ -59,6 +59,13 @@
     color: $color-primary-dark;
   }
 
+  &__Description {
+    transition: all 0.5s ease;
+    transform: scale(0);
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
   &__Buttons {
     transition: all 0.5s ease;
     transform: translateY(400%);
@@ -82,5 +89,10 @@
   &:hover &__Buttons,
   &:focus-within &__Buttons {
     transform: translateY(0);
+  }
+
+  &:hover &__Description,
+  &:focus-within &__Description {
+    transform: scale(1);
   }
 }
