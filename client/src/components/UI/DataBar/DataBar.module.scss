@@ -4,7 +4,16 @@
   height: 2.8rem;
   width: 100%;
   display: flex;
-  margin: 1rem 0;
+  margin-bottom: 1.5rem;
+
+  @include respond(phone) {
+    height: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__Title {
     display: inline-flex;
@@ -17,6 +26,10 @@
     width: 18rem;
     color: white;
     background-color: $color-primary-light;
+
+    @include respond(phone) {
+      font-size: 1rem;
+    }
   }
 
   &__ProgressGroup {
