@@ -17,23 +17,35 @@
   }
 
   &__VideoContainer {
+    position: relative;
     width: 720px;
     height: 405px;
     margin: auto;
+    overflow: hidden;
 
     @include respond(tab-portrait) {
       width: calc(100vw - 6rem);
-      height: calc((100vw - 6rem) * 0.562);
+      // height: calc((100vw - 6rem) * 0.562);
+      // width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      padding-top: 0px;
     }
 
     @include respond(phone) {
       width: calc(100vw - 2rem);
-      height: calc((100vw - 2rem) * 0.562);
+      // height: calc((100vw - 2rem) * 0.562);
     }
   }
 
-  &__Video {
-    object-fit: scale-down;
+  & iframe,
+  & object,
+  & embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &__Text {

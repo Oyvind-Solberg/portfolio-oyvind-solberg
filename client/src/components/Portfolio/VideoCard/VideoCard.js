@@ -8,6 +8,7 @@ const VideoCard = (props) => {
     <div tabIndex="0" className={classes.Card}>
       <div className={classes.Card__VideoContainer}>
         <iframe
+          title="Showreel 2019"
           className={classes.Card__Video}
           width="100%"
           height="100%"
