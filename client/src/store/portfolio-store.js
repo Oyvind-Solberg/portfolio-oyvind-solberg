@@ -158,6 +158,89 @@ const configureStore = () => {
 
       if (!error) return newState;
     },
+    GET_SKILLS: async () => {
+      let skills;
+      await axios
+        .get(`/skills?sort=position`)
+        .then((response) => {
+          skills = response.data.data.data;
+        })
+        .catch((err) => err);
+      if (skills) return { skills };
+    },
+    POST_SKILL: async (globalState, payload) => {
+      const newState = {};
+      let skill;
+
+      console.dir(payload);
+
+      await axios
+        .post('/skills', payload)
+        .then((response) => {
+          skill = response.data.data.data;
+          newState.message = {
+            type: 'success',
+            text: 'Ny ferdighet lagret',
+          };
+        })
+        .catch((err) => err);
+
+      newState.skillDocId = skill._id;
+      newState.skills = [...globalState.skills, skill];
+      if (skill) return newState;
+    },
+    PATCH_SKILL: async (globalState, payload) => {
+      const newState = {};
+      let skills = [...globalState.skills];
+      let updatedSection;
+      const body = {
+        name: payload.formData.get('name'),
+        group: payload.formData.get('group'),
+        percent: payload.formData.get('percent'),
+      };
+
+      await axios
+        .patch(`/skills/${payload.id}`, body)
+        .then((response) => {
+          updatedSection = response.data.data.data;
+          newState.message = {
+            type: 'success',
+            text: 'Ferdighet oppdatert',
+          };
+        })
+        .catch((err) => err);
+
+      newState.skills = skills.map((skill) => {
+        if (skill._id === payload.id) {
+          return updatedSection;
+        } else {
+          return skill;
+        }
+      });
+
+      if (updatedSection) return newState;
+    },
+    DELETE_SKILL: async (globalState, payload) => {
+      const newState = {
+        skillDocId: null,
+      };
+      let skills = [...globalState.skills];
+      let error;
+
+      await axios
+        .delete(`/skills/${payload}`)
+        .then(() => {
+          newState.message = {
+            type: 'success',
+            text: 'Ferdighet sletta',
+          };
+        })
+        .catch((err) => (error = err));
+
+      newState.skills = skills.filter((skill) => skill._id !== payload);
+
+      if (!error) return newState;
+    },
     GET_PROJECTS: async () => {
       let projects;
       await axios
@@ -242,6 +325,9 @@ const configureStore = () => {
     SET_SECTION_DOC_ID: (globalState, payload) => {
       return { sectionDocId: payload };
     },
+    SET_SKILL_DOC_ID: (globalState, payload) => {
+      return { skillDocId: payload };
+    },
     SET_PROJECT_DOC_ID: (globalState, payload) => {
       return { projectDocId: payload };
     },
@@ -254,6 +340,8 @@ const configureStore = () => {
     user: null,
     sections: null,
     sectionDocId: null,
+    skills: null,
+    skillDocId: null,
     projects: null,
     projectDocId: null,
     isLoggedIn: false,

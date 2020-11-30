@@ -13,6 +13,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const projectRouter = require('./routes/projectRoutes');
 const userRouter = require('./routes/userRoutes');
 const sectionRouter = require('./routes/sectionRoutes');
+const skillRouter = require('./routes/skillRoutes');
 
 // Start express app
 const app = express();
@@ -73,6 +74,7 @@ app.use(compression());
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/projects', projectRouter);
 app.use('/api/v1/sections', sectionRouter);
+app.use('/api/v1/skills', skillRouter);
 
 // Serve static assets
 if (process.env.NODE_ENV === 'development') {

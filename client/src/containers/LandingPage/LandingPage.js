@@ -6,7 +6,7 @@ import Portfolio from '../../components/Portfolio/Portfolio';
 import About from '../../components/About/About';
 
 const LandingPage = (props) => {
-  const { user, sections } = useStore()[0];
+  const { user, sections, skills } = useStore()[0];
   const asyncDispatch = useStore(false)[1];
 
   // Get user and section data
@@ -18,6 +18,10 @@ const LandingPage = (props) => {
     if (!sections) {
       asyncDispatch('GET_SECTIONS');
     }
+
+    if (!skills) {
+      asyncDispatch('GET_SKILLS');
+    }
   }, []);
 
   let content;
@@ -25,7 +29,7 @@ const LandingPage = (props) => {
   if (user) {
     content = (
       <Layout showcase user={user} sections={sections}>
-        <About user={user} />
+        <About user={user} skills={skills} />
         <Portfolio sections={sections} />
       </Layout>
     );

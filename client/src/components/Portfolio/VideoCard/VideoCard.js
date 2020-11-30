@@ -13,9 +13,9 @@ const VideoCard = (props) => {
           width="100%"
           height="100%"
           src={props.videoLink}
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className={classes.Card__Text}>
