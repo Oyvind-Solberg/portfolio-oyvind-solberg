@@ -15,7 +15,7 @@ const Admin = (props) => {
   const dispatch = useStore(false)[1];
   let content = <Spinner />;
 
-  if (user && projects && sections) {
+  if (user && projects && sections && skills) {
     content = (
       <div className={classes.Admin}>
         <UserData user={user} />
